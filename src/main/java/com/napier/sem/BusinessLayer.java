@@ -121,8 +121,8 @@ public class BusinessLayer{
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary "
-                            + "FROM employees, salaries, dept_emp, departments "
+                    "SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary"
+                            + "FROM employees, salaries, dept_emp, departments, dept_manager "
                             + "WHERE employees.emp_no = salaries.emp_no "
                             + "AND employees.emp_no = dept_emp.emp_no "
                             + "AND dept_emp.dept_no = departments.dept_no "
