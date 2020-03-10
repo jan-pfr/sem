@@ -175,10 +175,12 @@ public class BusinessLayer{
             while (rset.next())
             {
                 Employee emp = new Employee();
+
                 emp.emp_no = rset.getInt("employees.emp_no");
                 emp.first_name = rset.getString("employees.first_name");
                 emp.last_name = rset.getString("employees.last_name");
                 emp.salary = rset.getInt("salaries.salary");
+                emp.dept.dept_name = rset.getString("departments.dept_name");
                 employees.add(emp);
             }
             return employees;
