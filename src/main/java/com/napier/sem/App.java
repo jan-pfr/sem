@@ -20,7 +20,8 @@ public class App
         System.out.println(employees.size());
         ArrayList<Employee> employees1 = businessLayer.getAllSalariesbyRole("Engineer", connectionLayer.con);
         ArrayList<Employee> employees2 = businessLayer.getDepartment("Sales", connectionLayer.con);
-        a.printSalaries(employees2);
+        ArrayList<Employee> employees3 = businessLayer.getSalariesbyDepartment("d007", connectionLayer.con);
+        //a.printSalaries(employees2);
         //a.printSalaries(employees1);
         //a.printSalaries(employees);
 

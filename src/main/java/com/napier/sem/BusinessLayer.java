@@ -67,6 +67,7 @@ public class BusinessLayer{
                 emp.salary = rset.getInt("salaries.salary");
                 employees.add(emp);
             }
+            System.out.println("getAllSalaries was successful.");
             return employees;
         }
         catch (Exception e)
@@ -104,6 +105,7 @@ public class BusinessLayer{
                 emp.salary = rset.getInt("salaries.salary");
                 employees.add(emp);
             }
+            System.out.println("getAllbyRoleSalaries was successful.");
             return employees;
         }
         catch (Exception e)
@@ -121,8 +123,8 @@ public class BusinessLayer{
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary"
-                            + "FROM employees, salaries, dept_emp, departments, dept_manager "
+                    "SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary "
+                            + "FROM employees, salaries, dept_emp, departments "
                             + "WHERE employees.emp_no = salaries.emp_no "
                             + "AND employees.emp_no = dept_emp.emp_no "
                             + "AND dept_emp.dept_no = departments.dept_no "
@@ -142,6 +144,7 @@ public class BusinessLayer{
                 emp.salary = rset.getInt("salaries.salary");
                 employees.add(emp);
             }
+            System.out.println("getDepartment was successful.");
             return employees;
         }
         catch (Exception e)
@@ -167,7 +170,6 @@ public class BusinessLayer{
                             + "AND departments.dept_no = '"+dept_no+"'"
                             + "ORDER BY employees.emp_no ASC";
             // Execute SQL statement
-            System.out.println(strSelect);
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract employee information
             ArrayList<Employee> employees = new ArrayList<>();
@@ -183,6 +185,7 @@ public class BusinessLayer{
                 emp.dept.dept_name = rset.getString("departments.dept_name");
                 employees.add(emp);
             }
+            System.out.println("getSalariesbyDepartment was successful.");
             return employees;
         }
         catch (Exception e)
