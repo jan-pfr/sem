@@ -1,5 +1,4 @@
 package com.napier.sem;
-import java.sql.*;
 import java.util.ArrayList;
 
 public class App
@@ -20,6 +19,8 @@ public class App
         // Test the size of the returned data - should be 240124
         System.out.println(employees.size());
         ArrayList<Employee> employees1 = businessLayer.getAllSalariesbyRole("Engineer", connectionLayer.con);
+        ArrayList<Employee> employees2 = businessLayer.getSalariesbyDepartment("d002", connectionLayer.con);
+        a.printSalaries(employees2);
         //a.printSalaries(employees1);
         //a.printSalaries(employees);
 
@@ -41,7 +42,7 @@ public class App
                             + emp.last_name + "\n"
                             + emp.title + "\n"
                             + "Salary:" + emp.salary + "\n"
-                            + emp.dept_name + "\n"
+                            + emp.dept + "\n"
                             + "Manager: " + emp.manager + "\n");
         }
     }
