@@ -38,13 +38,13 @@ public class App
         if (emp != null)
         {
             System.out.println(
-                    emp.emp_no + " "
-                            + emp.first_name + " "
-                            + emp.last_name + "\n"
-                            + emp.title + "\n"
-                            + "Salary:" + emp.salary + "\n"
-                            + emp.dept + "\n"
-                            + "Manager: " + emp.manager + "\n");
+                    "Employee No.: "+emp.emp_no + "\n"
+                            + "First Name: "+emp.first_name + "\n"
+                            + "Second Name: "+emp.last_name + "\n"
+                            + "Title: "+emp.title + "\n"
+                            + "Salary: " + emp.salary + "\n"
+                            + "Department: "+ emp.dept.dept_name + "\n"
+                            + "Manager: " + emp.manager.first_name + " " +emp.manager.last_name+ "\n");
         } else{System.out.println("No employees");}
     }
     /**

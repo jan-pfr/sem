@@ -49,10 +49,15 @@ public class AppTest
         app.displayEmployee(null);
 
         Employee emp = new Employee();
+        Employee manager = new Employee();
+        manager.first_name = "Jan";
+        manager.last_name = "Cassisi";
         emp.emp_no = 1;
         emp.first_name = "Kevin";
         emp.last_name = "Chalmers";
         emp.title = "Engineer";
+        emp.dept.dept_name = " Finance";
+        emp.manager = manager;
         emp.salary = 55000;
          app.displayEmployee(emp);
 
