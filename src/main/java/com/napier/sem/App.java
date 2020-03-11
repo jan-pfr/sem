@@ -10,7 +10,16 @@ public class App
 
         // Connect to database
         ConnectionLayer connectionLayer = new ConnectionLayer();
-        connectionLayer.connect("localhost:33070");
+        // Connect to database
+        if (args.length < 1)
+        {
+            connectionLayer.connect("localhost:33070");
+        }
+        else
+        {
+            connectionLayer.connect(args[0]);
+        }
+        //connectionLayer.connect("localhost:33070");
         BusinessLayer businessLayer = new BusinessLayer();
 
         // Extract employee salary information
