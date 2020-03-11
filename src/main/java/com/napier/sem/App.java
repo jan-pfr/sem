@@ -10,7 +10,7 @@ public class App
 
         // Connect to database
         ConnectionLayer connectionLayer = new ConnectionLayer();
-        connectionLayer.connect("localhost:33060");
+        connectionLayer.connect("localhost:33070");
         BusinessLayer businessLayer = new BusinessLayer();
 
         // Extract employee salary information
