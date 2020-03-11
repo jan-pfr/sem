@@ -30,7 +30,7 @@ public class ConnectionLayer {
         int timer = 1000;
         for (int i = 0; i < retries; ++i)
         {
-            if (retries <= 5){
+            if (i >= 5){
                 timer = 30000;
             }
             System.out.println("Connecting to database...");
@@ -45,7 +45,7 @@ public class ConnectionLayer {
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println("Failed to connect to database attempt " + i);
                 System.out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
