@@ -33,7 +33,7 @@ public class ConnectionLayer {
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(1000);
+                Thread.sleep(30000);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
