@@ -27,13 +27,17 @@ public class ConnectionLayer {
         }
 
         int retries = 10;
+        int timer = 1000;
         for (int i = 0; i < retries; ++i)
         {
+            if (retries <= 5){
+                timer = 30000;
+            }
             System.out.println("Connecting to database...");
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+                Thread.sleep(timer);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
