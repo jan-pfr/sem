@@ -20,7 +20,8 @@ public class AppIntegrationTest
     {
         app = new App();
         connection = new ConnectionLayer();
-        connection.connect("localhost:33060");
+        businessLayer = new BusinessLayer();
+        connection.connect("localhost:33070");
 
     }
 
